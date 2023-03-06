@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
+import DarkModeToggle from "@/components/ui/DarkModeToggle/DarkModeToggle";
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -257,6 +258,7 @@ const Header = () => {
                                 </Popover>
                             </Popover.Group>
                             <div className="flex items-center md:ml-12">
+                                <DarkModeToggle />
                                 <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
                                     Sign in
                                 </a>

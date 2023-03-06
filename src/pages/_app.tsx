@@ -1,6 +1,8 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import {Inter} from "next/font/google";
+import {Inter} from "next/font/google"
+import {ThemeProvider} from 'next-themes'
+
 
 const inter = Inter({
 	subsets: ['cyrillic']
@@ -14,7 +16,9 @@ const App = ({ Component, pageProps }: AppProps) => {
                     font-family: ${inter.style.fontFamily};
                 }
 			`}</style>
-			<Component {...pageProps} />
+			<ThemeProvider attribute="class">
+				<Component {...pageProps} />
+			</ThemeProvider>
 		</>
 	)
 }
