@@ -16,8 +16,8 @@ const Home = () => {
             <main className="mx-auto max-w-7xl px-4 flex-1 mt-20 md:mt-48">
                 <div className="text-center">
                     <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-slate-100 sm:text-5xl md:text-6xl">
-                        <span className="block xl:inline">Hoster</span>{' '}
-                        <span className="block text-mainBlue xl:inline">Brains</span>
+                        <span className="block inline">Hoster</span>{' '}
+                        <span className="block text-mainBlue inline">Brains</span>
                     </h1>
                     <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                         Платформа документации и профессионального роста
