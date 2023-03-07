@@ -1,5 +1,5 @@
 {
-  "name": "hoster-doc",
+  "name": "hoster-docs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,7 +19,6 @@
     "classnames": "^2.3.2",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
-    "heroicons": "^2.0.16",
     "next": "13.2.3",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.21",

@@ -15,8 +15,8 @@ const Home = () => {
             <Header />
             <main className="mx-auto max-w-7xl px-4 flex-1 mt-20 md:mt-48">
                 <div className="text-center">
-                    <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                        <span className="block xl:inline">Hoster.KZ</span>{' '}
+                    <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-slate-100 sm:text-5xl md:text-6xl">
+                        <span className="block xl:inline">Hoster</span>{' '}
                         <span className="block text-mainBlue xl:inline">Brains</span>
                     </h1>
                     <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
@@ -26,7 +26,7 @@ const Home = () => {
                         <div className="rounded-md shadow">
                             <a
                                 href="#"
-                                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-mainBlue hover:bg-mainBlueDark md:py-4 md:text-lg md:px-10"
+                                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-mainBlue hover:bg-mainBlueDark md:py-2 md:text-lg md:px-10"
                             >
                                 Войти
                             </a>
@@ -34,7 +34,7 @@ const Home = () => {
                         <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
                             <a
                                 href="#"
-                                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+                                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-mainBlue dark:text-white bg-gray-200 dark:bg-slate-800 hover:bg-gray-300 dark:hover:text-gray-300 md:py-2 md:text-lg md:px-10"
                             >
                                 Hoster.KZ
                             </a>
