@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import FrontPage from "@/components/FrontPage/FrontPage";
+import Link from "next/link";
 
 
 
@@ -24,12 +25,12 @@ const Home = () => {
                     </p>
                     <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
                         <div className="rounded-md shadow">
-                            <a
-                                href="#"
+                            <Link
+                                href="/profile"
                                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-mainBlue hover:bg-mainBlueDark md:py-2 md:text-lg md:px-10"
                             >
                                 Войти
-                            </a>
+                            </Link>
                         </div>
                         <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
                             <a

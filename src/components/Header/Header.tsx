@@ -15,6 +15,7 @@ import {
 } from '@heroicons/react/24/solid'
 
 import {ChevronDownIcon} from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -63,7 +64,10 @@ const Header = () => {
                 <div className="relative z-20">
                     <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-3 lg:px-8 md:justify-start md:space-x-10">
                         <div>
-                            <a href="#" className="flex">
+                            <Link
+                                href='/'
+                                className="flex"
+                            >
                                 <span className="sr-only">Hoster.Brains</span>
                                 <div className="h-10 w-auto sm:h-12 relative">
                                     <Image
@@ -73,7 +77,7 @@ const Header = () => {
                                         className='h-full'
                                     />
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                         <DarkModeToggle customClass={'flex md:hidden ml-auto mr-4'} />
                         <div className="-mr-2 -my-2 md:hidden">
@@ -99,12 +103,12 @@ const Header = () => {
 
                             <div className="flex items-center md:ml-12">
                                 <DarkModeToggle customClass='ml-0 mr-8' />
-                                <a
-                                    href="#"
-                                    className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mainBlue hover:bg-mainBlueDark"
+                                <Link
+                                    href="/profile"
+                                    className="w-full flex items-center justify-center px-4 py-1 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mainBlue hover:bg-mainBlueDark"
                                 >
                                     Войти
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -157,12 +161,12 @@ const Header = () => {
                                     </a>
                                 </div>
                                 <div className="mt-6">
-                                    <a
-                                        href="#"
+                                    <Link
+                                        href="/profile"
                                         className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mainBlue hover:bg-mainBlueDark"
                                     >
                                         Войти
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
