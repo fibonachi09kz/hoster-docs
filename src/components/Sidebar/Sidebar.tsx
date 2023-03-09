@@ -24,13 +24,16 @@ const projects = [
 ]
 
 
-const Sidebar = () => {
+const Sidebar = ({ data } : any) => {
+
+	console.log(data)
+
 
 	const router = useRouter();
 	const currentRoute = router.pathname;
 
 	return (
-		<div className="flex h-full flex-1 flex-col">
+		<div className="flex h-full flex-1 flex-col max-w-[300px]">
 			<div className="flex flex-1 flex-col overflow-y-auto border-r dark:border-slate-700 shadow">
 				<nav className="flex-1 px-2 py-4">
 					<div className="space-y-1">
@@ -39,7 +42,7 @@ const Sidebar = () => {
 								key={item.name}
 								href={item.href}
 								className={classNames(
-									currentRoute === item.href ? 'bg-mainBlue text-white' : 'text-gray-900 hover:bg-gray-100',
+									currentRoute === item.href ? 'bg-mainBlue text-white' : 'text-gray-900 dark:text-gray-200 hover:bg-gray-100 hover:dark:bg-gray-800',
 									'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
 								)}
 								aria-current={currentRoute === item.href ? 'page' : undefined}
@@ -62,11 +65,14 @@ const Sidebar = () => {
 								<a
 									key={project.id}
 									href={project.href}
-									className="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100"
+									className="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-200 hover:bg-gray-100 hover:dark:bg-gray-800"
 								>
 									<span className="truncate">{project.name}</span>
 								</a>
 							))}
+
+
+
 						</div>
 						<Link
 							href="/projects"
@@ -80,6 +86,9 @@ const Sidebar = () => {
 		</div>
 	)
 }
+
+
+
 
 
 export default Sidebar;

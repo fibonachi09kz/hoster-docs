@@ -1,9 +1,9 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react';
+import { Popover, Transition } from '@headlessui/react';
 import DarkModeToggle from "@/components/ui/DarkModeToggle/DarkModeToggle";
 import logo from '../../media/main-logo.svg';
 import Image from 'next/image';
-
+import Link from "next/link";
 import {
     Bars4Icon, BriefcaseIcon,
     ChartBarIcon,
@@ -12,49 +12,13 @@ import {
     NewspaperIcon,
     PhoneIcon,
     PlayIcon, ShieldCheckIcon, UserGroupIcon, XMarkIcon
-} from '@heroicons/react/24/solid'
-
+} from '@heroicons/react/24/solid';
 import {ChevronDownIcon} from "@heroicons/react/24/solid";
-import Link from "next/link";
+
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
-
-const callsToAction = [
-    { name: 'Watch Demo', href: '#', icon: PlayIcon },
-    { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-const company = [
-    { name: 'About', href: '#', icon: InformationCircleIcon },
-    { name: 'Press', href: '#', icon: NewspaperIcon },
-    { name: 'Careers', href: '#', icon: BriefcaseIcon },
-    { name: 'Privacy', href: '#', icon: ShieldCheckIcon },
-]
-const resources = [
-    { name: 'Community', href: '#', icon: UserGroupIcon },
-    { name: 'Partners', href: '#', icon: GlobeAltIcon },
-]
-const blogPosts = [
-    {
-        id: 1,
-        name: 'Boost your conversion rate',
-        href: '#',
-        preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-        imageUrl:
-            'https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80',
-    },
-    {
-        id: 2,
-        name: 'How to use search engine optimization to drive traffic to your site',
-        href: '#',
-        preview: 'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-        imageUrl:
-            'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
-    },
-]
-
-
 
 const Header = () => {
     return (
@@ -89,15 +53,24 @@ const Header = () => {
                         <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
                             <div className="flex space-x-10">
 
-                                <a href="#" className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
+                                <Link
+                                    href="/projects"
+                                    className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300"
+                                >
                                     Проекты
-                                </a>
-                                <a href="#" className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
+                                </Link>
+                                <Link
+                                    href="#"
+                                    className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300"
+                                >
                                     Обучение
-                                </a>
-                                <a href="#" className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
+                                </Link>
+                                <Link
+                                    href="#"
+                                    className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300"
+                                >
                                     База знаний
-                                </a>
+                                </Link>
 
                             </div>
 
