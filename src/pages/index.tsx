@@ -26,7 +26,7 @@ const Home = () => {
                     <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
                         <div className="rounded-md shadow">
                             <Link
-                                href="/profile"
+                                href="/projects"
                                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-mainBlue hover:bg-mainBlueDark md:py-2 md:text-lg md:px-10"
                             >
                                 Войти
@@ -34,7 +34,9 @@ const Home = () => {
                         </div>
                         <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
                             <a
-                                href="#"
+                                href="https://hoster.kz/"
+                                target="_blank"
+                                rel="noopener"
                                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-mainBlue dark:text-white bg-gray-200 dark:bg-slate-800 hover:bg-gray-300 dark:hover:text-gray-300 md:py-2 md:text-lg md:px-10"
                             >
                                 Hoster.KZ

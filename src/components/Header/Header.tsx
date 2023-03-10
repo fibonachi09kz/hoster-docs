@@ -77,7 +77,7 @@ const Header = () => {
                             <div className="flex items-center md:ml-12">
                                 <DarkModeToggle customClass='ml-0 mr-8' />
                                 <Link
-                                    href="/profile"
+                                    href="/projects"
                                     className="w-full flex items-center justify-center px-4 py-1 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mainBlue hover:bg-mainBlueDark"
                                 >
                                     Войти

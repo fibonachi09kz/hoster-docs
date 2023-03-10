@@ -16,24 +16,16 @@ const navigation = [
 	{ name: 'Closed', href: '/', icon: ArchiveBoxIcon },
 	{ name: 'Recent', href: '/', icon: ClockIcon },
 ]
-const projects = [
-	{ id: 1, name: 'Hoster.kz', href: '#' },
-	{ id: 2, name: 'Forcar', href: '#' },
-	{ id: 3, name: 'Flirtshop', href: '#' },
-	{ id: 4, name: 'Goodgame.kz', href: '#' },
-]
 
 
-const Sidebar = ({ data } : any) => {
 
-	console.log(data)
-
+const Sidebar = ({ projects } : any) => {
 
 	const router = useRouter();
 	const currentRoute = router.pathname;
 
 	return (
-		<div className="flex h-full flex-1 flex-col max-w-[300px]">
+		<div className="flex h-auto flex-1 flex-col max-w-[300px]">
 			<div className="flex flex-1 flex-col overflow-y-auto border-r dark:border-slate-700 shadow">
 				<nav className="flex-1 px-2 py-4">
 					<div className="space-y-1">
@@ -59,27 +51,30 @@ const Sidebar = ({ data } : any) => {
 						))}
 					</div>
 					<div className="mt-10">
-						<p className="px-3 text-base font-medium text-gray-900">Проекты</p>
+						<p className="px-3 text-base font-medium text-gray-900 dark:text-gray-200">Проекты</p>
 						<div className="mt-2 space-y-1">
-							{projects.map((project: any) => (
-								<a
+							{projects.data.map((project: any) => (
+								<Link
 									key={project.id}
-									href={project.href}
+									href={`/projects/${project.id}`}
 									className="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-200 hover:bg-gray-100 hover:dark:bg-gray-800"
 								>
-									<span className="truncate">{project.name}</span>
-								</a>
+									<span className="truncate">{project.attributes.Title}</span>
+								</Link>
 							))}
-
-
-
 						</div>
-						<Link
-							href="/projects"
-							className="mt-3 block px-3 text-sm font-bold text-mainBlue hover:text-mainBlueDark"
-						>
-							Все проекты
-						</Link>
+						{
+							projects.data.length > 5
+							?
+								<Link
+									href="/projects"
+									className="mt-3 block px-3 text-sm font-bold text-mainBlue hover:text-mainBlueDark"
+								>
+									Все проекты
+								</Link>
+							:
+							undefined
+						}
 					</div>
 				</nav>
 			</div>
