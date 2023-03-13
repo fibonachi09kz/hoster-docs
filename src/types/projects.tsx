@@ -1,5 +1,4 @@
-
-export interface Project {
+export interface ItteratedProject {
 	attributes: {
 		Client: string,
 		Detail: string,
@@ -12,8 +11,22 @@ export interface Project {
 	id: number
 }
 
+
+export interface SingleProject {
+	data: ItteratedProject
+	meta: {
+		pagination: {
+			page: number,
+			pageCount: number,
+			pageSize: number,
+			total: number
+		}
+	}
+}
+
+
 export interface Projects {
-	data: Array<Project>
+	data: Array<ItteratedProject>
 	meta: {
 		pagination: {
 			page: number,

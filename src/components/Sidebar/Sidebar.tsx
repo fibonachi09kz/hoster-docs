@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import {useRouter} from "next/router";
 import {FC, useEffect, useState} from "react";
-import {Project, Projects} from "@/types/projects";
+import {ItteratedProject, Projects} from "@/types/projects";
 import Loader from "@/components/ui/Loader/Loader";
 
 const navigation = [
@@ -71,7 +71,7 @@ const Sidebar = () => {
 								<div>
 									<div className="mt-2 space-y-1">
 										{
-											projects.data.map((project: Project) => (
+											projects.data.map((project: ItteratedProject) => (
 												<Link
 													key={project.id}
 													href={`/projects/${project.id}`}

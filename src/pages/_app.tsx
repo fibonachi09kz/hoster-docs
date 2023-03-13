@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 import {Inter} from "next/font/google"
 import {ThemeProvider} from 'next-themes'
 
-
 const inter = Inter({
 	subsets: ['cyrillic']
 })
