@@ -8,6 +8,9 @@ import {
 } from '@heroicons/react/24/outline'
 import Link from "next/link";
 import {useRouter} from "next/router";
+import {FC, useEffect, useState} from "react";
+import {Project, Projects} from "@/types/projects";
+import Loader from "@/components/ui/Loader/Loader";
 
 const navigation = [
 	{ name: 'Мой профиль', href: '/profile', icon: HomeIcon },
@@ -18,11 +21,22 @@ const navigation = [
 ]
 
 
-
-const Sidebar = ({ projects } : any) => {
+const Sidebar = () => {
 
 	const router = useRouter();
 	const currentRoute = router.pathname;
+
+	const [projects, setProjects] = useState<Projects>()
+
+	useEffect(() => {
+		async function fetchData() {
+			const res = await fetch(process.env.API_OPEN_URL + '/projects')
+			const data = await res.json()
+			setProjects(data)
+		}
+		fetchData()
+	}, [])
+
 
 	return (
 		<div className="flex h-auto flex-1 flex-col max-w-[300px]">
@@ -52,38 +66,49 @@ const Sidebar = ({ projects } : any) => {
 					</div>
 					<div className="mt-10">
 						<p className="px-3 text-base font-medium text-gray-900 dark:text-gray-200">Проекты</p>
-						<div className="mt-2 space-y-1">
-							{projects.data.map((project: any) => (
-								<Link
-									key={project.id}
-									href={`/projects/${project.id}`}
-									className="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-200 hover:bg-gray-100 hover:dark:bg-gray-800"
-								>
-									<span className="truncate">{project.attributes.Title}</span>
-								</Link>
-							))}
-						</div>
 						{
-							projects.data.length > 5
-							?
-								<Link
-									href="/projects"
-									className="mt-3 block px-3 text-sm font-bold text-mainBlue hover:text-mainBlueDark"
-								>
-									Все проекты
-								</Link>
-							:
-							undefined
+							projects ?
+								<div>
+									<div className="mt-2 space-y-1">
+										{
+											projects.data.map((project: Project) => (
+												<Link
+													key={project.id}
+													href={`/projects/${project.id}`}
+													className="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-200 hover:bg-gray-100 hover:dark:bg-gray-800"
+												>
+													<span className="truncate">{project.attributes.Title}</span>
+												</Link>
+											))
+										}
+									</div>
+									<div>
+										{
+											projects.data.length > 5
+												?
+												<Link
+													href="/projects"
+													className="mt-3 block px-3 text-sm font-bold text-mainBlue hover:text-mainBlueDark"
+												>
+													Все проекты
+												</Link>
+												:
+												undefined
+										}
+
+									</div>
+								</div>
+								:
+								<Loader />
 						}
+
+
 					</div>
 				</nav>
 			</div>
 		</div>
 	)
 }
-
-
-
 
 
 export default Sidebar;

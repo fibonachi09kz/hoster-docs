@@ -22,7 +22,7 @@ const Projects = ({ projects }:any) => {
 		<>
 			<Header />
 			<div className="flex flex-1">
-				<Sidebar projects={projects} />
+				<Sidebar />
 				<div className="flex-1">
 					<ProjectsSearch projectsFilter={projectsFilter} />
 					<ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 p-5 flex-1">

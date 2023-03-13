@@ -40,7 +40,7 @@ const SingleProjectTizer = ({project} : any) => {
 				<div className="-mt-px flex divide-x divide-gray-200 dark:divide-slate-700">
 					<div className="flex w-0 flex-1 hover:bg-gray-50 hover:dark:bg-gray-700">
 						<Link
-							href={`mailto:`}
+							href={`/projects/${project.id}/docs`}
 							className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 dark:text-gray-200"
 						>
 							<DocumentChartBarIcon className="h-5 w-5 text-gray-500 dark:text-gray-300" aria-hidden="true" />
@@ -49,7 +49,7 @@ const SingleProjectTizer = ({project} : any) => {
 					</div>
 					<div className="-ml-px flex w-0 flex-1 hover:bg-gray-50 hover:dark:bg-gray-700">
 						<Link
-							href={`tel:`}
+							href={`/projects/${project.id}`}
 							className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 dark:text-gray-200"
 						>
 							<ArrowTopRightOnSquareIcon className="h-5 w-5 text-gray-500 dark:text-gray-300" aria-hidden="true" />
